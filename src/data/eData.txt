@@ -1,0 +1,10 @@
+1025 Alex Parrish cse NewYork
+1031 Ryan Booth cse Miami
+1005 Shelby Wyatt cse Texas
+1019 Caleb Haas cse California
+1046 Lucifer MorningStar cse LosAngeles
+1054 Chloe Decker ece Toronto
+1031 Sherlock Holmes ece London
+1035 Simon Asher ece Alaska
+1029 Nathalie Vazquez ece Westworld
+1049 Daenerys Targaryen ece Dragonstone
