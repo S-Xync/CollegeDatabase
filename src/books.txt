@@ -1,0 +1,15 @@
+b01 LinuxBasics
+b02 JavaBasics
+b03 JavaAdvanced
+b04 ArtificialIntelligence
+b05 Networking
+b06 CProgramming
+b07 Databases
+b08 WebDevelopment
+b09 MachineLearning
+b10 English
+b11 Linguistics
+b12 Physics
+b13 Chemistry
+b14 Biology
+b15 CloudComputing

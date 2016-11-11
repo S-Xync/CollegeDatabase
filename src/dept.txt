@@ -1,0 +1,2 @@
+cse ComputerScienceEngineering
+ece ElectonicsAndCommunicationEngineering
