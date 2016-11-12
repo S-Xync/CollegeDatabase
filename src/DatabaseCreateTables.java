@@ -93,11 +93,7 @@ public class DatabaseCreateTables {
 
             statement.executeUpdate("INSERT INTO admin VALUES('admin','admin123')");//admin's username and password
 
-            statement.executeUpdate("");
-
-
-
-
+            connection.close();
         }catch(Exception e){
             System.out.println(e);
         }
