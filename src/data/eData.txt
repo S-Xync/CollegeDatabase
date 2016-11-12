@@ -4,7 +4,7 @@
 1019 ep1019 Caleb Haas cse California
 1046 ep1046 Lucifer MorningStar cse LosAngeles
 1054 ep1054 Chloe Decker ece Toronto
-1031 ep1031 Sherlock Holmes ece London
+1041 ep1041 Sherlock Holmes ece London
 1035 ep1035 Simon Asher ece Alaska
 1029 ep1029 Nathalie Vazquez ece Westworld
 1049 ep1049 Daenerys Targaryen ece Dragonstone
