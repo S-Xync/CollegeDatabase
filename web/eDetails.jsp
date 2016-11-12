@@ -54,6 +54,9 @@
             firstName = resultSet.getString("first_name");
             lastName = resultSet.getString("last_name");
             address = resultSet.getString("address");
+            resultSet = statement.executeQuery("SELECT dep_name FROM departments WHERE dep_id='" + deptId + "'");
+            resultSet.next();
+            dept = resultSet.getString("dep_name");
             resultSet = statement.executeQuery("SELECT b_id FROM e_books WHERE roll='" + id + "'");
             while (resultSet.next()) {
                 booksIds.add(resultSet.getString("b_id"));

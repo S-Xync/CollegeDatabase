@@ -21,13 +21,13 @@
     String dbString = "jdbc:mysql://localhost:3306/datacrate?user=root&password=mysql&useSSL=false";
     String id = request.getParameter("s_id");
     String pass = request.getParameter("s_pass");
-    int year;
-    String deptId;
-    String dept;
-    String address;
-    String firstName;
-    String lastName;
-    int roll;
+    int year = 0;
+    String deptId = "";
+    String dept = "";
+    String address = "";
+    String firstName = "";
+    String lastName = "";
+    int roll = 0;
     ArrayList<String> coursesIds = new ArrayList<String>();
     ArrayList<String> courses = new ArrayList<String>();
     ArrayList<String> booksIds = new ArrayList<String>();
@@ -56,6 +56,9 @@
             firstName = resultSet.getString("first_name");
             lastName = resultSet.getString("last_name");
             address = resultSet.getString("address");
+            resultSet = statement.executeQuery("SELECT dep_name FROM departments WHERE dep_id='" + deptId + "'");
+            resultSet.next();
+            dept = resultSet.getString("dep_name");
             resultSet = statement.executeQuery("SELECT b_id FROM s_books WHERE roll='" + id + "'");
             while (resultSet.next()) {
                 booksIds.add(resultSet.getString("b_id"));
@@ -110,6 +113,57 @@
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
         <strong>Success!</strong> Logged In.
     </div>
+    <div class="row well">
+        <div class="col-md-4 col-sm-12 text-center text-uppercase"><strong>First Name : <%= firstName%>
+        </strong></div>
+        <div class="col-md-4 col-sm-12 text-center text-uppercase"><strong>Last Name : <%= lastName%>
+        </strong></div>
+        <div class="col-md-4 col-sm-12 text-center text-uppercase"><strong>Address : <%= address%>
+        </strong></div>
+    </div>
+    <div class="row panel panel-danger">
+        <div class="panel-body">
+            <div class="col-md-4 col-sm-12 text-center text-uppercase"><strong>Year : <%= year%>
+            </strong></div>
+            <div class="col-md-8 col-sm-12 text-center"><strong>Department : <%= dept%>
+            </strong></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-sm-12">
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Courses</h3>
+                </div>
+                <div class="panel-body list-group">
+                    <%
+                        for (int i = 0; i < courses.size(); i++) {%>
+                    <a href="#" class="list-group-item"><%= courses.get(i)%>
+                    </a>
+                    <%
+                        }
+                    %>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Books</h3>
+                </div>
+                <div class="panel-body list-group">
+                    <%
+                        for (int i = 0; i < books.size(); i++) {%>
+                    <a href="#" class="list-group-item"><%= books.get(i)%>
+                    </a>
+                    <%
+                        }
+                    %>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <%} else {%>
     <div class="jumbotron alert alert-warning">
