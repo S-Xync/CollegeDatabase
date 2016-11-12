@@ -20,15 +20,14 @@
     String dbString = "jdbc:mysql://localhost:3306/datacrate?user=root&password=mysql&useSSL=false";
     String id = request.getParameter("e_id");
     String pass = request.getParameter("e_pass");
-    String deptId;
-    String dept;
-    String address;
-    String firstName;
-    String lastName;
-    int roll;
+    String deptId = "";
+    String dept = "";
+    String address = "";
+    String firstName = "";
+    String lastName = "";
+    int roll = 0;
     ArrayList<String> coursesIds = new ArrayList<String>();
     ArrayList<String> courses = new ArrayList<String>();
-    ArrayList<Integer> years = new ArrayList<Integer>();
     ArrayList<String> booksIds = new ArrayList<String>();
     ArrayList<String> books = new ArrayList<String>();
     try {
@@ -71,10 +70,9 @@
                 books.add(resultSet.getString("b_name"));
             }
             for (int i = 0; i < coursesIds.size(); i++) {
-                resultSet = statement.executeQuery("SELECT c_name,'year' FROM courses WHERE c_id='" + coursesIds.get(i) + "'");
+                resultSet = statement.executeQuery("SELECT c_name FROM courses WHERE c_id='" + coursesIds.get(i) + "'");
                 resultSet.next();
                 courses.add(resultSet.getString("c_name"));
-                years.add(resultSet.getInt("year"));
             }
         }
 %>
@@ -93,12 +91,7 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Login
-                        <span class="caret"></span></a>
                 <li><a href="eNames.jsp">Employees</a></li>
-                </li>
             </ul>
         </div>
     </div>
@@ -117,6 +110,59 @@
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
         <strong>Success!</strong> Logged in.
     </div>
+    <div class="well text-center text-uppercase">
+        <h2>Employee Id : <%= roll%>
+        </h2>
+    </div>
+    <div class="row well">
+        <div class="col-md-4 col-sm-12 text-center text-uppercase borders"><strong>First Name : <%= firstName%>
+        </strong></div>
+        <div class="col-md-4 col-sm-12 text-center text-uppercase borders"><strong>Last Name : <%= lastName%>
+        </strong></div>
+        <div class="col-md-4 col-sm-12 text-center text-uppercase borders"><strong>Address : <%= address%>
+        </strong></div>
+    </div>
+    <div class="row panel panel-danger">
+        <div class="panel-body text-center">
+            <strong>Department : <%= dept%>
+            </strong>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-sm-12">
+            <div class="panel panel-warning">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Courses</h3>
+                </div>
+                <div class="panel-body list-group">
+                    <%
+                        for (int i = 0; i < courses.size(); i++) {%>
+                    <a href="#" class="list-group-item"><%= courses.get(i)%>
+                    </a>
+                    <%
+                        }
+                    %>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Books</h3>
+                </div>
+                <div class="panel-body list-group">
+                    <%
+                        for (int i = 0; i < books.size(); i++) {%>
+                    <a href="#" class="list-group-item"><%= books.get(i)%>
+                    </a>
+                    <%
+                        }
+                    %>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <%} else {%>
     <div class="jumbotron alert alert-warning">

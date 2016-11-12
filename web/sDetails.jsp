@@ -113,19 +113,23 @@
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
         <strong>Success!</strong> Logged In.
     </div>
+    <div class="well text-center text-uppercase">
+        <h2>Student Id : <%= roll%>
+        </h2>
+    </div>
     <div class="row well">
-        <div class="col-md-4 col-sm-12 text-center text-uppercase"><strong>First Name : <%= firstName%>
+        <div class="col-md-4 col-sm-12 text-center text-uppercase borders"><strong>First Name : <%= firstName%>
         </strong></div>
-        <div class="col-md-4 col-sm-12 text-center text-uppercase"><strong>Last Name : <%= lastName%>
+        <div class="col-md-4 col-sm-12 text-center text-uppercase borders"><strong>Last Name : <%= lastName%>
         </strong></div>
-        <div class="col-md-4 col-sm-12 text-center text-uppercase"><strong>Address : <%= address%>
+        <div class="col-md-4 col-sm-12 text-center text-uppercase borders"><strong>Address : <%= address%>
         </strong></div>
     </div>
     <div class="row panel panel-danger">
         <div class="panel-body">
-            <div class="col-md-4 col-sm-12 text-center text-uppercase"><strong>Year : <%= year%>
+            <div class="col-md-4 col-sm-12 text-center text-uppercase borders"><strong>Year : <%= year%>
             </strong></div>
-            <div class="col-md-8 col-sm-12 text-center"><strong>Department : <%= dept%>
+            <div class="col-md-8 col-sm-12 text-center borders"><strong>Department : <%= dept%>
             </strong></div>
         </div>
     </div>
