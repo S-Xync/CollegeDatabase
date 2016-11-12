@@ -21,7 +21,7 @@ cs340 DatabaseManagementSystems 3
 cs312 ComputerNetworks 3
 sc402 Chemistry 4
 cs401 TheoryOfComputation 4
-cs420 Compilers	4
+cs420 Compilers 4
 cs412 DataCommunication 4
 cs411 DistributedSystems 4
 cs451 CloudComputing 4
