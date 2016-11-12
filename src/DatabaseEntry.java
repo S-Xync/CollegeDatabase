@@ -159,6 +159,7 @@ public class DatabaseEntry {
             fr.close();
             br.close();
             preparedStatement.close();
+            connection.close();
         } catch (IOException | SQLException e) {
             System.out.println(e);
         }
