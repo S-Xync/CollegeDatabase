@@ -9,14 +9,14 @@
 <html>
   <head>
     <title>Welcome | College Database</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/styles.css">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
   </head>
   <body>
-      <nav class="navbar navbar-inverse">
+  <nav class="navbar navbar-default navbar-fixed-top">
           <div class="container-fluid">
-              <!-- Brand and toggle get grouped for better mobile display -->
               <div class="navbar-header">
                   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                       <span class="sr-only">Toggle navigation</span>
@@ -27,7 +27,6 @@
                   <a class="navbar-brand" href="#">College Database</a>
               </div>
 
-              <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav navbar-right">
                       <li class="dropdown">
@@ -40,8 +39,8 @@
                           </ul>
                       </li>
                   </ul>
-              </div><!-- /.navbar-collapse -->
-          </div><!-- /.container-fluid -->
+              </div>
+          </div>
       </nav>
       <div class="container">
           <ol class="breadcrumb">
@@ -68,7 +67,5 @@
           <li>Last Name</li>
       </ul>
   </div>
-
-
   </body>
 </html>

@@ -2,13 +2,13 @@
   Created by IntelliJ IDEA.
   User: saikumar
   Date: 12/11/16
-  Time: 1:13 PM
+  Time: 3:42 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Admin Login | College Database</title>
+    <title>Employee Details | College Database</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <script type="text/javascript" src="js/jquery.js"></script>
@@ -25,7 +25,9 @@
 <div class="container">
     <ol class="breadcrumb">
         <li><a href="/">Home</a></li>
-        <li class="active"><a href="aLogin.jsp">Admin Login</a></li>
+        <li><a href="eNames.jsp">Employees</a></li>
+        <li><a href="eLogin.jsp">Employee Login</a></li>
+        <li class="active"><a href="#">Employee Details</a></li>
     </ol>
 </div>
 </body>

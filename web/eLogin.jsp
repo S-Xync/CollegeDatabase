@@ -10,17 +10,17 @@
 <head>
     <title>Employee Login | College Database</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <a class="navbar-brand" href="/">College Database</a>
         </div>
-    </div><!-- /.container-fluid -->
+    </div>
 </nav>
 <div class="container">
     <ol class="breadcrumb">
@@ -29,6 +29,5 @@
         <li class="active"><a href="eLogin.jsp">Employee Login</a></li>
     </ol>
 </div>
-
 </body>
 </html>
