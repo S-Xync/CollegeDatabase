@@ -61,8 +61,8 @@ public class DatabaseEntry {
             preparedStatement = connection.prepareStatement("INSERT INTO departments VALUES(?,?)");
             while ((str = br.readLine()) != null) {
                 arr = str.split(" ");
-                preparedStatement.setString(2, arr[1]);
                 preparedStatement.setString(1, arr[0]);
+                preparedStatement.setString(2, arr[1]);
                 preparedStatement.executeUpdate();
             }
             fr.close();
@@ -88,6 +88,7 @@ public class DatabaseEntry {
             fr.close();
             br.close();
             preparedStatement.close();
+            preparedStatement1.close();
 
             fr = new FileReader("./src/data/eData.txt");
             br = new BufferedReader(fr);
@@ -105,8 +106,59 @@ public class DatabaseEntry {
                 preparedStatement1.setString(2,arr[1]);
                 preparedStatement1.executeUpdate();
             }
+            fr.close();
+            br.close();
+            preparedStatement.close();
+            preparedStatement1.close();
 
-
+            fr = new FileReader("./src/data/sBooks.txt");
+            br = new BufferedReader(fr);
+            preparedStatement = connection.prepareStatement("INSERT INTO s_books VALUES(?,?)");
+            while ((str = br.readLine()) != null) {
+                arr = str.split(" ");
+                preparedStatement.setInt(1,Integer.valueOf(arr[0]));
+                preparedStatement.setString(2,arr[1]);
+                preparedStatement.executeUpdate();
+            }
+            fr.close();
+            br.close();
+            preparedStatement.close();
+            fr = new FileReader("./src/data/eBooks.txt");
+            br = new BufferedReader(fr);
+            preparedStatement = connection.prepareStatement("INSERT INTO e_books VALUES(?,?)");
+            while ((str = br.readLine()) != null) {
+                arr = str.split(" ");
+                preparedStatement.setInt(1,Integer.valueOf(arr[0]));
+                preparedStatement.setString(2,arr[1]);
+                preparedStatement.executeUpdate();
+            }
+            fr.close();
+            br.close();
+            preparedStatement.close();
+            fr = new FileReader("./src/data/sCourses.txt");
+            br = new BufferedReader(fr);
+            preparedStatement = connection.prepareStatement("INSERT INTO s_courses VALUES(?,?)");
+            while ((str = br.readLine()) != null) {
+                arr = str.split(" ");
+                preparedStatement.setInt(1,Integer.valueOf(arr[0]));
+                preparedStatement.setString(2,arr[1]);
+                preparedStatement.executeUpdate();
+            }
+            fr.close();
+            br.close();
+            preparedStatement.close();
+            fr = new FileReader("./src/data/eCourses.txt");
+            br = new BufferedReader(fr);
+            preparedStatement = connection.prepareStatement("INSERT INTO e_courses VALUES(?,?)");
+            while ((str = br.readLine()) != null) {
+                arr = str.split(" ");
+                preparedStatement.setInt(1,Integer.valueOf(arr[0]));
+                preparedStatement.setString(2,arr[1]);
+                preparedStatement.executeUpdate();
+            }
+            fr.close();
+            br.close();
+            preparedStatement.close();
         } catch (IOException | SQLException e) {
             System.out.println(e);
         }
