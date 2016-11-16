@@ -62,9 +62,9 @@
       </ol>
       <h4>Employees can change Details like :</h4>
       <ul>
-          <li>Address</li>
           <li>First Name</li>
           <li>Last Name</li>
+          <li>Address</li>
       </ul>
   </div>
   </body>

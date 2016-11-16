@@ -178,12 +178,32 @@
         <h4>Try <a href="eLogin.jsp">Logging in</a> again</h4>
     </div>
     <%}%>
+    <%
+            connection.close();
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+    %>
+    <form class="form-horizontal" action="eChanges.jsp">
+        <fieldset>
+            <legend>Change Your Details</legend>
+            <input type="hidden" name="e_id" value="<%=id%>">
+            <div class="form-group">
+                <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                <div class="col-lg-10">
+                    <input type="password" class="form-control" id="inputPassword" name="e_pass" placeholder="Password"
+                           required="required">
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button type="reset" class="btn btn-default" style="margin-right:5px">Cancel</button>
+                    <button type="submit" class="btn btn-primary" style="margin-left:5px">Submit</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
 </div>
-<%
-        connection.close();
-    } catch (SQLException e) {
-        System.out.println(e);
-    }
-%>
 </body>
 </html>
