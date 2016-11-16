@@ -76,7 +76,7 @@
             }
         }
 %>
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -162,7 +162,26 @@
             </div>
         </div>
     </div>
-
+    <form class="form-horizontal" action="eChanges.jsp">
+        <fieldset>
+            <legend>Change Your Details</legend>
+            <input type="hidden" name="e_id" value="<%=id%>">
+            <div class="form-group">
+                <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                <div class="col-lg-10">
+                    <input type="password" class="form-control" id="inputPassword" name="e_pass" placeholder="Password"
+                           required="required">
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button type="reset" class="btn btn-default" style="margin-right:5px">Cancel</button>
+                    <button type="submit" class="btn btn-primary" style="margin-left:5px">Submit</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
 
     <%} else {%>
     <div class="jumbotron alert alert-warning">
@@ -184,26 +203,6 @@
             System.out.println(e);
         }
     %>
-    <form class="form-horizontal" action="eChanges.jsp">
-        <fieldset>
-            <legend>Change Your Details</legend>
-            <input type="hidden" name="e_id" value="<%=id%>">
-            <div class="form-group">
-                <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-                <div class="col-lg-10">
-                    <input type="password" class="form-control" id="inputPassword" name="e_pass" placeholder="Password"
-                           required="required">
-                </div>
-            </div>
-            <br>
-            <div class="form-group">
-                <div class="col-lg-10 col-lg-offset-2">
-                    <button type="reset" class="btn btn-default" style="margin-right:5px">Cancel</button>
-                    <button type="submit" class="btn btn-primary" style="margin-left:5px">Submit</button>
-                </div>
-            </div>
-        </fieldset>
-    </form>
 </div>
 </body>
 </html>

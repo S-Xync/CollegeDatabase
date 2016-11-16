@@ -1,4 +1,7 @@
-<%--
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.Statement" %><%--
   Created by IntelliJ IDEA.
   User: saikumar
   Date: 16/11/16
@@ -16,10 +19,24 @@
 </head>
 <body>
 <%
+    String dbString = "jdbc:mysql://localhost:3306/datacrate?user=root&password=mysql&useSSL=false";
     String id = request.getParameter("e_id");
     String pass = request.getParameter("e_pass");
+    boolean loggedIn = false;
+    try {
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection connection = DriverManager.getConnection(dbString);
+        Statement statement = connection.createStatement();
+        ResultSet resultSet;
+        resultSet = statement.executeQuery("SELECT pass FROM e_login WHERE roll='" + id + "'");
+        resultSet.next();
+        String realPass = resultSet.getString("pass");
+        if (pass.equals(realPass)) {
+            loggedIn = true;
+        }
+        connection.close();
 %>
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -47,6 +64,9 @@
         <li class="active"><a href="eDetails.jsp?e_id=<%=id%>&e_pass=<%=pass%>">Employee Details</a></li>
         <li><a href="#">Employee Changes</a></li>
     </ol>
+    <%
+        if (loggedIn) {
+    %>
     <form class="form-horizontal" action="eChangesR.jsp">
         <fieldset>
             <legend>Enter The Details You Want To Change</legend>
@@ -89,6 +109,19 @@
             </div>
         </fieldset>
     </form>
+    <%
+    } else {
+    %>
+    <div class="jumbotron alert alert-warning">
+        <h1>Wrong Password</h1>
+        <h4>Try <a href="eLogin.jsp">Logging in</a> again</h4>
+    </div>
+    <%
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    %>
 </div>
 </body>
 </html>
