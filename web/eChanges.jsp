@@ -16,7 +16,6 @@
 </head>
 <body>
 <%
-    String dbString = "jdbc:mysql://localhost:3306/datacrate?user=root&password=mysql&useSSL=false";
     String id = request.getParameter("e_id");
     String pass = request.getParameter("e_pass");
 %>
@@ -48,6 +47,48 @@
         <li class="active"><a href="eDetails.jsp?e_id=<%=id%>&e_pass=<%=pass%>">Employee Details</a></li>
         <li><a href="#">Employee Changes</a></li>
     </ol>
+    <form class="form-horizontal" action="eChangesR.jsp">
+        <fieldset>
+            <legend>Enter The Details You Want To Change</legend>
+            <input type="hidden" name="e_id" value="<%=id%>">
+            <input type="hidden" name="e_pass" value="<%=pass%>">
+            <div class="form-group">
+                <label for="inputfName" class="col-lg-2 control-label">First Name</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="inputfName" name="f_name" placeholder="First Name">
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="inputlName" class="col-lg-2 control-label">Last Name</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="inputlName" name="l_name" placeholder="Last Name">
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="inputAddress" class="col-lg-2 control-label">Address</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="inputAddress" name="addr" placeholder="Address">
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="inputNpass" class="col-lg-2 control-label">New Password</label>
+                <div class="col-lg-10">
+                    <input type="password" class="form-control" id="inputNpass" name="n_pass"
+                           placeholder="New Password">
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button type="reset" class="btn btn-default" style="margin-right:5px">Cancel</button>
+                    <button type="submit" class="btn btn-primary" style="margin-left:5px">Submit</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
 </div>
 </body>
 </html>
