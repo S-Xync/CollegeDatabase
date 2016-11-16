@@ -49,6 +49,12 @@
         <li><a href="aLogin.jsp">Admin Login</a></li>
         <li class="active"><a href="#">Admin</a></li>
     </ol>
+    <div class="jumbotron panel panel-danger text-uppercase" style="text-align: center">
+        <h1 style="color: red">Under Construction</h1>
+        <h2 style="color: deepskyblue">Checkback Later</h2>
+        <br>
+        <h4>Return to <a href="/">Home</a> Page</h4>
+    </div>
 </div>
 </body>
 </html>
